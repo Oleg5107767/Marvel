@@ -23,6 +23,7 @@
         cursor: pointer;
         transition: 0.3s transform;
         
+        
         img {
             width: 200px;
             height: 200px;
@@ -32,6 +33,22 @@
         &_selected {
             box-shadow: 0 5px 20px $main-color;
             transform: translateY(-8px);
+            
+        }
+      
+       &-enter {
+            opacity: 0;
+        }
+        &-enter-active {
+            opacity: 1;
+            transition: opacity 1500ms ease-in;
+        }
+        &-exit {
+            opacity: 1;   
+        }
+        &-exit-active {
+            opacity: 0;
+            transition: opacity 1500ms ease-in;   
         }
     }
     &__name {
