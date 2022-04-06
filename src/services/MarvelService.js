@@ -4,7 +4,7 @@ const useMarvelService = () => {
     const {loading, request, error, clearError} = useHttp();
     
     const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-    const _apiKey = 'apikey=c5d6fc8b83116d92ed468ce36bac6c62';
+    const _apiKey = 'apikey=dfd361486ff83dd14768e737e4d82681';
     const _baseOffset = 210;
      //v1/public/comics
     //https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=210&apikey=c5d6fc8b83116d92ed468ce36bac6c62
@@ -35,7 +35,8 @@ const useMarvelService = () => {
         return res.data.results.map(_transformComics);
     }
     const _transformComics = (comics) => {
-        console.log(comics.prices,comics.title)
+        console.log(comics.prices,comics.title,comics.id)
+
         return{
             id: comics.id,
             title: comics.title,
